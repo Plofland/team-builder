@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import TeamMemberCard from "./TeamMemberCard";
 import TeamForm from "./TeamForm";
 import axios from "axios";
+import "../App.css";
 
 const initialFormValues = {
   name: "",

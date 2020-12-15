@@ -4,6 +4,7 @@ export default function TeamMemberCard({ member }) {
   return (
     <div>
       <h2>{member.name}</h2>
+      <p>{member.email}</p>
       <p>
         Is{" "}
         {member.lambdaStudent

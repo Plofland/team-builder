@@ -25,6 +25,7 @@ export default function TeamForm({ values, update, submit }) {
             maxLength="30"
           ></input>
         </label>
+        <br></br>
         <label>
           Email
           <input
@@ -34,6 +35,7 @@ export default function TeamForm({ values, update, submit }) {
             onChange={submit}
           ></input>
         </label>
+        <br></br>
         <label>
           Student Status
           <select name="isStudent" value={values.isStudent} onChange={onChange}>
@@ -42,6 +44,7 @@ export default function TeamForm({ values, update, submit }) {
             <option value="notStudent">No</option>
           </select>
         </label>
+        <br></br>
         <label>
           Are they human? <input type="checkbox"></input>
         </label>
