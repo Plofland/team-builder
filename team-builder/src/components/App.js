@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import TeamMemberCard from "./TeamMemberCard";
 import TeamForm from "./TeamForm";
-import axios from "axios";
+// import axios from "axios";
 import "../App.css";
 
 const initialFormValues = {
   name: "",
   email: "",
-  isStudent: "",
+  isStudent: false,
 };
 
 function App() {
@@ -31,21 +31,24 @@ function App() {
       return;
     }
 
-    axios
-      .get("fakeapi.com", newMember)
-      .then((result) => {
-        setTeamMembers([newMember, ...teamMembers]);
-        setFormValues(initialFormValues);
-        console.log(result);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    setTeamMembers([...teamMembers, newMember]);
+    setFormValues(initialFormValues);
+
+    // axios
+    //   .get("fakeapi.com", newMember)
+    //   .then((result) => {
+    //     setTeamMembers([newMember, ...teamMembers]);//order determines whether the member being added goes to the top or bottom of the list
+    //     setFormValues(initialFormValues);
+    //     console.log(result);
+    //   })
+    //   .catch((error) => {
+    //     console.log(error);
+    //   });
   };
 
-  useEffect(() => {
-    axios.get("fakeapi.com").then((res) => setTeamMembers(res.data));
-  }, []);
+  // useEffect(() => {
+  //   axios.get("fakeapi.com").then((res) => setTeamMembers(res.data));
+  // }, []);
 
   return (
     <div>

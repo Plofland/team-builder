@@ -2,7 +2,7 @@ import React from "react";
 
 export default function TeamForm({ values, update, submit }) {
   const onChange = (event) => {
-    const { name, value } = event.target;
+    const { name, value } = event.target; //destructuring
     update(name, value);
   };
 
@@ -21,7 +21,7 @@ export default function TeamForm({ values, update, submit }) {
             type="text"
             name="name"
             value={values.name}
-            onChange={update}
+            onChange={onChange}
             maxLength="30"
           ></input>
         </label>
@@ -32,7 +32,7 @@ export default function TeamForm({ values, update, submit }) {
             type="email"
             name="email"
             value={values.email}
-            onChange={submit}
+            onChange={onChange}
           ></input>
         </label>
         <br></br>
